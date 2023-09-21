@@ -29,3 +29,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo test job 2
+          echo '${{ github.head_ref }}'
+          echo '${{ github.ref }}'
