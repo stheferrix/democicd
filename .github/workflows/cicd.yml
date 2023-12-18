@@ -1,4 +1,5 @@
 name: DemoCICD
+run-name: Deploy ${{ github.event.pull_request.title }} by @${{ github.actor }}
 on:
   merge_group:
   push:
