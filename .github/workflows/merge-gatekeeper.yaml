@@ -14,8 +14,8 @@ jobs:
     permissions:
       checks: read
       statuses: read
-      contents: read #required for checkout and labeler action
-      pull-requests: write #required for labeler action
+      # contents: read #required for checkout and labeler action
+      # pull-requests: write #required for labeler action
     steps:
       - name: Checkout
         uses: actions/checkout@v3
