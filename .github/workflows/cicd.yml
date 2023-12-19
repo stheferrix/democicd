@@ -1,5 +1,5 @@
 name: DemoCICD
-run-name: ${{ github.event.merge_group.head_commit }} by @${{ github.event.merge_group.head_commit.author }}
+run-name:
 on:
   merge_group:
   push:
