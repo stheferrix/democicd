@@ -1,0 +1,36 @@
+---
+name: Merge Gatekeeper
+
+on:
+  merge_group:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  merge-gatekeeper:
+    name: merge-gatekeeper
+    runs-on: ubuntu-latest
+    permissions:
+      checks: read
+      statuses: read
+      contents: read #required for checkout and labeler action
+      pull-requests: write #required for labeler action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/labeler@v4
+      - name: Run Merge Gatekeeper
+        if: github.event_name != 'merge_group'
+        uses: upsidr/merge-gatekeeper@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          timeout: 2400
+
+      - name: Run Merge Gatekeeper in Merge Queue
+        if: github.event_name == 'merge_group'
+        uses: upsidr/merge-gatekeeper@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{github.ref}}
+          timeout: 2400
