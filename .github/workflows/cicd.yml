@@ -1,6 +1,5 @@
 name: DemoCICD
 run-name: Deploy ${{ github.event.push.head_commit.message }}
-# ${{ github.event.pull_request.title }} by @${{ github.actor }}
 on:
   merge_group:
   push:
