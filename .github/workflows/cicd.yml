@@ -1,5 +1,5 @@
 name: DemoCICD
-run-name:
+
 on:
   merge_group:
   push:
