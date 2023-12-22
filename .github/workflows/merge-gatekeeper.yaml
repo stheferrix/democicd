@@ -1,7 +1,5 @@
 name: Merge Gatekeeper
 
-run-name: Deploy to ${{ github.event.merge_group.head_commit }} by @${{ github.actor }}
-
 on:
   merge_group:
   pull_request:
