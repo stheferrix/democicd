@@ -1,6 +1,6 @@
 name: DemoCICD
 
-run-name: ${{ github.event.pull_request.title }} ${{ github.event.merge_group.head_commit }} by @${{ github.actor }}
+run-name: Running ${{ github.event_name }} ${{ github.ref_name }} by @${{ github.actor }}
 
 on:
   merge_group:
