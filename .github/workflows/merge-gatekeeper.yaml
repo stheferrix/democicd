@@ -21,8 +21,8 @@ jobs:
 
       - name: Run Merge Gatekeeper in Merge Queue
         if: github.event_name == 'merge_group'
-        uses: upsidr/merge-gatekeeper@v1
+        uses: upsidr/merge-gatekeeper@v1.2.1
         with:
           token: ${{ secrets.CICD_TOKEN }}
           ref: ${{github.ref}}
-          timeout: 2400
+            
