@@ -1,6 +1,6 @@
 name: DemoCICD
 
-run-name: Running ${{ github.event_name }} ${{ github.ref_name }} by @${{ github.actor }} - ${{ github.head_ref }} ${{ github.event }} ${{ github.base_ref}}
+run-name: Running ${{ github.event_name }} ${{ github.ref_name }} by @${{ github.actor }} - ${{ github.head_ref }} ${{ github.workflow }}
 
 on:
   merge_group:
