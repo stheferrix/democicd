@@ -1,13 +1,20 @@
 name: DemoCICD
 
-run-name: Running ${{ github.workflow }} on ${{ github.event_name }} by @${{ github.actor }} - ${{ github.event.merge_group.head_commit.message }}
-
 on:
-  merge_group:
   push:
     branches: [ "main" ]
   pull_request:
-    branches: [ "main" ] 
+    branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      merge_group:
+    	type: checks_requested
+    	merge_group:
+    		head_commit:
+    			message: rodando merge_group
+
+run-name: ${{ inputs.merge_group.merge_group.head_commit.message }} Running ${{ github.workflow }} on ${{ github.event_name }} by @${{ github.actor }}
+  
 
 jobs:
   build:
